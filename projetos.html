@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Alessandrohpsf</title>
+		<link rel="icon" 
+              type="png" 
+              href="images/perfil.png"  />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="css/main.css" />
+		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+		<link rel="manifest" href="manifest.json">
+	</head>
+	<body class="is-preload" >
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<div id="intro"></div>
+
+				<!-- Nav -->
+					<nav id="nav" id="intro">
+						<ul class="links">
+							<li><a href="perfil.html">Perfil</a></li>
+							<li class="active"><a href="projetos.html">Projetos</a></li>
+							<li><a href="experiencias.html">Experiências</a></li>
+							<li><a href="formacoes.html">Formações</a></li>
+							<li><a href="contato.html">Contato</a></li>
+						</ul>
+						<ul class="icons">
+							<li>
+							  <a href="https://github.com/alessandrohpsf" class="icon brands fa-github" aria-label="Link para o perfil no GitHub">
+								<span class="sr-only">GitHub</span>
+							  </a>
+							</li>
+							<li>
+							  <a href="https://www.linkedin.com/in/alessandrohpsf/" class="icon brands fa-linkedin-in" aria-label="Link para o perfil no LinkedIn">
+								<span class="sr-only">LinkedIn</span>
+							  </a>
+							</li>
+						  </ul>
+						
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+						 
+						<section class="posts">
+							<article>
+								<header id="fipa">
+									<span>Redes</span>
+									<h2><a href="#">Arquitetura de Redes</h2>
+								</header>
+								<a href="#" class="image fit"><img src="images/rede1.jpg" alt="" /></a>
+								<p>Através do curso de formação de Redes de computadores foi realizado um projeto fictício para estabelecer conexões entre end-points, 
+								wi-fi, switchs e servidores. Foi aplicado protocolos BGP, OSPF, RIP e NAT, com VLANs, Server EAP, DHCP, IPv4 e IPv6.</p>
+								<ul class="icons">
+									<li>
+										<a href="https://www.linkedin.com/in/alessandrohpsf/" class="icon brands fa-linkedin-in" aria-label="Link para o perfil no LinkedIn">
+											<span class="sr-only">LinkedIn</span>
+										  </a>
+									  </li>
+								</ul>
+							</article>
+							<article>
+								<header>
+									<span>React Native</span>
+									<h2><a href="#"> 
+										App Suape Vantagens </h2>
+								</header>
+								<a href="#" class="image fit"><img src="images/appsv.jpg" alt="" /></a>
+								<p>Idealizamos e criamos uma Plataforma em PWA, uma solução móvel que poderá contribuir ainda mais com a economia local entre os estabelecimentos e os trabalhadores. 
+									Oferecendo catálogo de serviços locais, Informações úteis e Cupom de desconto, que promovem uma interação mais próxima e significativa.</p>
+									<ul class="icons">
+										<li>
+										  <a href="https://github.com/rennegomes/suapeVantagens" class="icon brands fa-github" aria-label="Link para o perfil no GitHub">
+											<span class="sr-only">GitHub</span>
+										  </a>
+										</li>
+										<li>
+										  <a href="https://www.linkedin.com/in/alessandrohpsf/" class="icon brands fa-linkedin-in" aria-label="Link para o perfil no LinkedIn">
+											<span class="sr-only">LinkedIn</span>
+										  </a>
+										</li>
+									  </ul>
+							</article>
+							<article>
+								<header>
+									<span>PWA</span>
+									<h2><a href="#">Invest'Braz</a></h2>
+								</header>
+								<a href="#" class="image fit"><img src="images/investbraz.png" alt="" /></a>
+								<p>Neste projeto academico, criei individualmento este PWA em forma de portfolio para apresentar este empresa de consutoria em investimentos, 
+									com 5 páginas com formulários, mapa, e links de contatos. utilizei html, css e javascript.</p>
+									<ul class="icons">
+										<li>
+										  <a href="https://github.com/alessandrohpsf/InvestBraz" class="icon brands fa-github" aria-label="Link para o perfil no GitHub">
+											<span class="sr-only">GitHub</span>
+										  </a>
+										</li>
+										<li>
+										  <a href="https://www.linkedin.com/in/alessandrohpsf/" class="icon brands fa-linkedin-in" aria-label="Link para o perfil no LinkedIn">
+											<span class="sr-only">LinkedIn</span>
+										  </a>
+										</li>
+									  </ul>
+							</article>
+							
+                                
+							
+					</div>
+
+				
+				
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.scrollex.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/browser.min.js"></script>
+			<script src="js/breakpoints.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
+
+			<script>
+				let newWorker;
+				if ('serviceWorker' in navigator) {
+				  navigator.serviceWorker.register('/service-worker.js').then(reg => {
+					reg.addEventListener('updatefound', () => {
+					  newWorker = reg.installing;
+					});
+				  });
+				  let refreshing;
+				  navigator.serviceWorker.addEventListener('controllerchange', function () {
+					if (refreshing) return;
+					window.location.reload();
+					refreshing = true;
+				  });
+				}
+			  </script>
+
+	</body>
+</html>

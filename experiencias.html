@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Alessandrohpsf</title>
+		<link rel="icon" 
+              type="png" 
+              href="images/perfil.png"  />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="css/main.css" />
+		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
+		<link rel="manifest" href="manifest.json">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+		crossorigin=""/>
+		<style>
+			#map {
+            height: 100vh;
+            width: 100%;
+        }
+		</style>
+		
+	</head>
+	<body class="is-preload" >
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<div id="intro"></div>
+
+				<!-- Nav -->
+					<nav id="nav" id="intro">
+						<ul class="links">
+							<li><a href="perfil.html">Perfil</a></li>
+							<li><a href="projetos.html">Projetos</a></li>
+							<li class="active" ><a href="experiencias.html">Experiências</a></li>
+							<li><a href="formacoes.html">Formações</a></li>
+							<li><a href="contato.html">Contato</a></li>
+							
+						</ul>
+						<ul class="icons">
+							<li>
+							  <a href="https://github.com/alessandrohpsf" class="icon brands fa-github" aria-label="Link para o perfil no GitHub">
+								<span class="sr-only">GitHub</span>
+							  </a>
+							</li>
+							<li>
+							  <a href="https://www.linkedin.com/in/alessandrohpsf/" class="icon brands fa-linkedin-in" aria-label="Link para o perfil no LinkedIn">
+								<span class="sr-only">LinkedIn</span>
+							  </a>
+							</li>
+						  </ul>
+						
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							
+								<header class="major">
+									
+									<h1> Minhas Experiências Profissionais</h1>
+								</header>
+								<section class="posts">
+									
+									<article>
+										<header>
+											<span>Serviço Público</span>
+											<h2><a href="#"> 
+												Estagiário </h2>
+										</header>
+										<a href="#" class="image fit"><img src="images/prf.jpeg" alt="" /></a>
+										<p> Cumprir o cargo de estagiário na PRF por um ano e seis meses, gerenciando, monitorando, administrando redes e micro do sistema da PRF.
+											Auxliei em suporte aos usuário, de forma remota e presencial. 
+										</p>
+										
+										<h4>01/2023 - 06/2024</h4>
+											
+									</article>  
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.scrollex.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/browser.min.js"></script>
+			<script src="js/breakpoints.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
+			<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([-8.047562, -34.877002], 13); // Define as coordenadas de Recife
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Adicione um marcador para a localização do usuário
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var userLat = position.coords.latitude;
+            var userLng = position.coords.longitude;
+            L.marker([userLat, userLng]).addTo(map)
+                .bindPopup('Sua Localização Atual')
+                .openPopup();
+        });
+
+        // Adicione marcadores para pontos pré-cadastrados em Recife
+        var points = [
+        { name: "Sede", latlng: [-8.05000000, -34.88916667] },
+        { name: "Unidade BV", latlng: [-8.127522, -34.905891] }
+        ];
+
+        points.forEach(function (point) {
+            L.marker(point.latlng).addTo(map).bindPopup(point.name);
+        });
+
+        // Atualize o tamanho do mapa quando a janela for redimensionada
+        window.addEventListener('resize', function () {
+            map.invalidateSize();
+        });
+    </script>
+
+			<script>
+				let newWorker;
+				if ('serviceWorker' in navigator) {
+				  navigator.serviceWorker.register('/service-worker.js').then(reg => {
+					reg.addEventListener('updatefound', () => {
+					  newWorker = reg.installing;
+					});
+				  });
+				  let refreshing;
+				  navigator.serviceWorker.addEventListener('controllerchange', function () {
+					if (refreshing) return;
+					window.location.reload();
+					refreshing = true;
+				  });
+				}
+			  </script>
+
+	</body>
+</html>
